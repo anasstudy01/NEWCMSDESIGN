@@ -1,0 +1,115 @@
+import React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import { X, LayoutDashboard, TrendingUp, CreditCard, FileText, ArrowRightLeft, Users, Shield, LogOut } from 'lucide-react';
+
+interface MobileSidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onLogout: () => void;
+}
+
+/**
+ * Mobile sidebar component for responsive navigation
+ * Slides in from the left on mobile devices
+ */
+const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose, onLogout }) => {
+  const location = useLocation();
+
+  const navigation = [
+    { name: 'Dashboard', href: '/dashboard', icon: LayoutDashboard },
+    { name: 'Live Accounts', href: '/live-accounts', icon: TrendingUp },
+    { name: 'Trading Account', href: '/trading-account', icon: CreditCard },
+    { name: 'KYC Verification', href: '/kyc', icon: FileText },
+    { name: 'Deposits', href: '/deposits', icon: CreditCard },
+    { name: 'Internal Transfer', href: '/internal-transfer', icon: ArrowRightLeft },
+    { name: 'IB Request', href: '/ib-request', icon: Users },
+    { name: '2FA Settings', href: '/2fa', icon: Shield },
+  ];
+
+  if (!isOpen) return null;
+
+  return (
+    <>
+      {/* Overlay */}
+      <div className="fixed inset-0 z-50 lg:hidden">
+        <div className="fixed inset-0 bg-gray-900/80" onClick={onClose} />
+        
+        {/* Sidebar */}
+        <div className="fixed inset-y-0 left-0 z-50 w-64 bg-white">
+          <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 pb-4">
+            {/* Header with close button */}
+            <div className="flex h-16 shrink-0 items-center justify-between">
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
+                  <span className="text-white font-bold text-sm">A</span>
+                </div>
+                <div>
+                  <h1 className="text-lg font-bold text-gray-900">AMBITIOUS</h1>
+                  <p className="text-xs text-gray-500">CAPITAL LIMITED</p>
+                </div>
+              </div>
+              <button
+                type="button"
+                className="-m-2.5 p-2.5 text-gray-700"
+                onClick={onClose}
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Navigation */}
+            <nav className="flex flex-1 flex-col">
+              <ul role="list" className="flex flex-1 flex-col gap-y-7">
+                <li>
+                  <ul role="list" className="-mx-2 space-y-1">
+                    {navigation.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = location.pathname === item.href;
+                      
+                      return (
+                        <li key={item.name}>
+                          <NavLink
+                            to={item.href}
+                            onClick={onClose}
+                            className={`group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold transition-colors ${
+                              isActive
+                                ? 'bg-green-50 text-green-700'
+                                : 'text-gray-700 hover:text-green-700 hover:bg-green-50'
+                            }`}
+                          >
+                            <Icon
+                              className={`h-5 w-5 shrink-0 ${
+                                isActive ? 'text-green-700' : 'text-gray-400 group-hover:text-green-700'
+                              }`}
+                            />
+                            {item.name}
+                          </NavLink>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
+
+                {/* Logout button */}
+                <li className="mt-auto">
+                  <button
+                    onClick={() => {
+                      onLogout();
+                      onClose();
+                    }}
+                    className="group flex w-full gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700 hover:text-red-700 hover:bg-red-50"
+                  >
+                    <LogOut className="h-5 w-5 shrink-0 text-gray-400 group-hover:text-red-700" />
+                    Sign out
+                  </button>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default MobileSidebar;

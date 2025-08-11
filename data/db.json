@@ -1,0 +1,105 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "demo@ambitious.com",
+      "password": "password123",
+      "name": "John Doe",
+      "balance": 50000,
+      "verified": true,
+      "twoFactorEnabled": false
+    }
+  ],
+  "accounts": [
+    {
+      "id": "1",
+      "userId": 1,
+      "accountNumber": "AMB001",
+      "accountType": "Live",
+      "balance": 45000,
+      "currency": "USD",
+      "leverage": "1:100",
+      "status": "Active"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "accountNumber": "AMB002",
+      "accountType": "Demo",
+      "balance": 10000,
+      "currency": "USD",
+      "leverage": "1:200",
+      "status": "Active"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "userId": 1,
+      "type": "Deposit",
+      "amount": 5000,
+      "currency": "USD",
+      "method": "Bank Transfer",
+      "status": "Completed",
+      "date": "2025-08-10T10:30:00Z"
+    },
+    {
+      "id": "2",
+      "userId": 1,
+      "type": "Withdrawal",
+      "amount": 1000,
+      "currency": "USD",
+      "method": "USDT",
+      "status": "Processing",
+      "date": "2025-08-09T15:45:00Z"
+    },
+    {
+      "id": "6a53",
+      "amount": 100,
+      "method": "bank",
+      "currency": "USD",
+      "userId": 1,
+      "type": "Deposit",
+      "status": "Processing",
+      "date": "2025-08-11T12:53:35.511Z"
+    }
+  ],
+  "kycDocuments": [
+    {
+      "id": "1",
+      "userId": 1,
+      "documentType": "passport",
+      "status": "pending",
+      "uploadDate": "2025-08-08T12:00:00Z"
+    }
+  ],
+  "ibRequests": [
+    {
+      "id": "1",
+      "userId": 1,
+      "companyName": "Trading Solutions Ltd",
+      "contactPerson": "Jane Smith",
+      "status": "Under Review",
+      "submissionDate": "2025-08-07T09:15:00Z"
+    },
+    {
+      "id": "8668",
+      "companyName": "gadgetmafia",
+      "contactPerson": "mohd anas",
+      "email": "anasstudy01@gmail.com",
+      "phone": "+917009428243",
+      "address": "922/A small flat",
+      "experience": "sdffhjhnm",
+      "userId": 1,
+      "submissionDate": "2025-08-11T12:54:02.770Z",
+      "status": "Under Review"
+    }
+  ],
+  "dashboardStats": {
+    "totalBalance": 45000,
+    "totalProfit": 2500,
+    "totalTrades": 150,
+    "activeAccounts": 2,
+    "monthlyGrowth": 12.5
+  }
+}
