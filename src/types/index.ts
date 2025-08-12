@@ -38,6 +38,8 @@ export interface KYCDocument {
   id: number;
   userId: number;
   documentType: 'passport' | 'driving_license' | 'national_id';
+  documentNumber?: string;
+  expiryDate?: string;
   status: 'pending' | 'approved' | 'rejected';
   uploadDate: string;
 }

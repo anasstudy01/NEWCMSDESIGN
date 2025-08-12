@@ -15,8 +15,8 @@ const TwoFactorAuth: React.FC = () => {
   const [backupCodes, setBackupCodes] = useState<string[]>([]);
   const [showBackupCodes, setShowBackupCodes] = useState(false);
 
-  // Mock QR code data (in real app, this would come from backend)
-  const qrCodeData = 'otpauth://totp/Ambitious%20Capital:demo@ambitious.com?secret=JBSWY3DPEHPK3PXP&issuer=Ambitious%20Capital';
+  // Mock secret key for setup (in real app, this would come from backend)
+  
   const secretKey = 'JBSWY3DPEHPK3PXP';
 
   // Generate backup codes
