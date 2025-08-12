@@ -113,4 +113,34 @@
     "activeAccounts": 2,
     "monthlyGrowth": 12.5
   }
+    ,
+    "positions": [
+      {
+        "srNo": 1,
+        "orderId": "ORD001",
+        "account": "ACC123456",
+        "type": "Buy",
+        "openPrice": 1.0892,
+        "symbol": "EUR/USD",
+        "volume": 0.1
+      },
+      {
+        "srNo": 2,
+        "orderId": "ORD002",
+        "account": "ACC123456",
+        "type": "Sell",
+        "openPrice": 1.2734,
+        "symbol": "GBP/USD",
+        "volume": 0.2
+      },
+      {
+        "srNo": 3,
+        "orderId": "ORD003",
+        "account": "ACC123457",
+        "type": "Buy",
+        "openPrice": 149.82,
+        "symbol": "USD/JPY",
+        "volume": 0.15
+      }
+    ]
 }

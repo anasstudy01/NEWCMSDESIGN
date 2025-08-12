@@ -87,6 +87,14 @@ export const dashboardAPI = {
     const response = await api.get('/transactions?_limit=5&_sort=date&_order=desc');
     return response.data;
   },
+
+  /**
+   * Get trading positions
+   */
+  getPositions: async () => {
+    const response = await api.get('/positions');
+    return response.data;
+  },
 };
 
 /**

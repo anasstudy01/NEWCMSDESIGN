@@ -1,3 +1,13 @@
+// Trading Position type
+export interface Position {
+  srNo: number;
+  orderId: string;
+  account: string;
+  type: 'Buy' | 'Sell';
+  openPrice: number;
+  symbol: string;
+  volume: number;
+}
 // User related types
 export interface User {
   id: number;
