@@ -4,6 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import LiveAccounts from "./pages/LiveAccounts";
+import ManageAccount from "./pages/ManageAccount";
 import TradingAccountCreation from "./pages/TradingAccountCreation";
 import KYCVerification from "./pages/KYCVerification";
 import Deposits from "./pages/Deposits";
@@ -57,14 +58,12 @@ function App() {
         />
 
         {/* Protected Routes */}
-        <Route
-          path="/*"
-          element={
-            isAuthenticated ? (
+        <Route  path="/*" element={ isAuthenticated ? (
               <DashboardLayout onLogout={handleLogout}>
                 <Routes>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/live-accounts" element={<LiveAccounts />} />
+                  <Route path="/manage-account" element={<ManageAccount />} />
                   <Route
                     path="/trading-account"
                     element={<TradingAccountCreation />}
