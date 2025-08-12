@@ -35,7 +35,12 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose, onLogout
         <div className="fixed inset-0 bg-gray-900/80" onClick={onClose} />
         
         {/* Sidebar */}
-        <div className="fixed inset-y-0 left-0 z-50 w-64 bg-white">
+        <div 
+          className="fixed inset-y-0 left-0 z-50 w-64"
+          style={{
+            background: 'linear-gradient(349deg, rgba(12, 247, 114, 1) 0%, rgba(87, 199, 133, 1) 26%, rgba(255, 240, 240, 1) 100%)'
+          }}
+        >
           <div className="flex grow flex-col gap-y-5 overflow-y-auto px-6 pb-4">
             {/* Header with close button */}
             <div className="flex h-16 shrink-0 items-center justify-between">

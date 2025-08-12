@@ -35,7 +35,12 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
   ];
 
   return (
-    <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4 shadow-sm">
+    <div 
+      className="flex grow flex-col gap-y-5 overflow-y-auto px-6 pb-4 shadow-sm"
+      style={{
+        background: 'linear-gradient(349deg, rgba(12, 247, 114, 1) 0%, rgba(87, 199, 133, 1) 26%, rgba(255, 240, 240, 1) 100%)'
+      }}
+    >
       {/* Logo */}
       <div className="flex h-16 shrink-0 items-center">
         <div className="flex items-center">
