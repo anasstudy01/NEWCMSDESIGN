@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ title, onMobileMenuClick }) => {
               </div>
               <span className="hidden lg:flex lg:items-center">
                 <span className="ml-4 text-sm font-semibold leading-6 text-gray-900">
-                  John Doe
+                  BillionInfo_user
                 </span>
               </span>
             </button>
