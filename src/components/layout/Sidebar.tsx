@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import logo from '../../assets/nav-logo.png'; // Adjust the path as necessary
 import {
   LayoutDashboard,
   TrendingUp,
@@ -81,15 +82,16 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
     >
       {/* Logo */}
       <div className="flex h-16 shrink-0 items-center">
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center mr-3">
             <span className="text-white font-bold text-sm">A</span>
           </div>
           <div>
-            <h1 className="text-lg font-bold text-gray-900">AMBITIOUS</h1>
-            <p className="text-xs text-gray-500">CAPITAL LIMITED</p>
+            <h1 className="text-lg font-bold text-gray-900">Billion InfoTech</h1>
+            <p className="text-xs text-gray-500"> LIMITED</p>
           </div>
-        </div>
+        </div> */}
+        <img src={logo} alt="Billion InfoTech" className="h-full w-full object-cover" />
       </div>
 
       {/* Navigation */}
