@@ -12,7 +12,7 @@ import {
   LogOut,
   ChevronDown,
   ChevronRight,
-  Plus,
+  // Plus,
   Settings as ManageIcon,
 } from 'lucide-react';
 
@@ -47,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
       name: 'Accounts',
       icon: TrendingUp,
       submenu: [
-        { name: 'Create Account', href: '/trading-account', icon: Plus },
+        // { name: 'Create Account', href: '/trading-account', icon: Plus },
         { name: 'Manage Account', href: '/manage-account', icon: ManageIcon },
         { name: 'Live Accounts', href: '/live-accounts', icon: TrendingUp },
       ]

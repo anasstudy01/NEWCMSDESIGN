@@ -24,14 +24,9 @@ const Dashboard: React.FC = () => {
     []
   );
   const [positions, setPositions] = useState<Position[]>([]);
-  const [closedPositions, setClosedPositions] = useState<Position[]>([]);
+  const [closedPositions] = useState<Position[]>([]);
   const [loading, setLoading] = useState(true);
   const [showOpenPositions, setShowOpenPositions] = useState(true);
-
-  const handleClosePositions = () => {
-    setClosedPositions([...closedPositions, ...positions]);
-    setPositions([]);
-  };
 
   // Fetch dashboard data on component mount
   useEffect(() => {
@@ -447,18 +442,20 @@ const Dashboard: React.FC = () => {
       </Card> */}
 
       {/* Trading Positions and Refer & Earn Cards Side by Side */}
-      <div className="flex justify-between ">
-        <div>
-          <Card
-            title="Trading Positions"
-            subtitle="Manage your trading positions"
-          >
-            <div className="flex justify-between items-center mb-4">
+      <div className="flex justify-between gap-5 h-96">
+        <div className="w-full h-full">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 h-full flex flex-col">
+            {/* Custom Header with Title and Toggle Buttons */}
+            <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center flex-shrink-0">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">Trading Positions</h3>
+                <p className="text-sm text-gray-600 mt-1">Manage your trading positions</p>
+              </div>
               <div className="flex space-x-2">
                 <button
                   className={`px-4 py-2 rounded text-sm font-medium transition ${
                     showOpenPositions
-                      ? "bg-blue-600 text-white"
+                      ? "bg-green-600 text-white"
                       : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                   }`}
                   onClick={() => setShowOpenPositions(true)}
@@ -468,7 +465,7 @@ const Dashboard: React.FC = () => {
                 <button
                   className={`px-4 py-2 rounded text-sm font-medium transition ${
                     !showOpenPositions
-                      ? "bg-blue-600 text-white"
+                      ? "bg-green-600 text-white"
                       : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                   }`}
                   onClick={() => setShowOpenPositions(false)}
@@ -476,20 +473,10 @@ const Dashboard: React.FC = () => {
                   Closed ({closedPositions.length})
                 </button>
               </div>
-              <div className="space-x-2">
-                <button className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition">
-                  Open Position
-                </button>
-                <button
-                  className="bg-gray-200 text-gray-700 px-4 py-2 rounded shadow hover:bg-gray-300 transition"
-                  onClick={handleClosePositions}
-                >
-                  Close Position
-                </button>
-              </div>
             </div>
-
-            <div className="overflow-x-auto">
+            {/* Card Content with Scroll */}
+            <div className="p-6 flex-1 overflow-hidden flex flex-col">
+              <div className="flex-1 overflow-auto">
               <table className="min-w-full text-sm">
                 <thead>
                   <tr className="bg-gray-50">
@@ -584,27 +571,36 @@ const Dashboard: React.FC = () => {
                   )}
                 </tbody>
               </table>
-            </div>
-
-            <div className="flex justify-between items-center mt-2 text-sm text-gray-600">
-              <span>
-                Showing{" "}
-                {showOpenPositions ? positions.length : closedPositions.length}{" "}
-                {showOpenPositions ? "open" : "closed"} positions
-              </span>
-              {showOpenPositions && (
+              </div>
+              
+              {/* Footer outside scroll area */}
+              <div className="flex justify-between items-center mt-2 text-sm text-gray-600 flex-shrink-0">
                 <span>
-                  Total:{" "}
-                  <span className="font-bold text-lg text-gray-900">
-                    $12,345.67
-                  </span>
+                  Showing{" "}
+                  {showOpenPositions ? positions.length : closedPositions.length}{" "}
+                  {showOpenPositions ? "open" : "closed"} positions
                 </span>
-              )}
+                {showOpenPositions && (
+                  <span>
+                    Total:{" "}
+                    <span className="font-bold text-lg text-gray-900">
+                      $12,345.67
+                    </span>
+                  </span>
+                )}
+              </div>
             </div>
-          </Card>
+          </div>
         </div>
-        <div>
-          <Card title="Refer & Earn" subtitle="Share and get rewarded">
+        <div className="w-full h-full">
+          <div className="bg-white rounded-lg shadow-sm border border-gray-200 h-full flex flex-col">
+            {/* Header */}
+            <div className="px-6 py-4 border-b border-gray-200 flex-shrink-0">
+              <h3 className="text-lg font-semibold text-gray-900">Refer & Earn</h3>
+              <p className="text-sm text-gray-600 mt-1">Share and get rewarded</p>
+            </div>
+            {/* Content with Scroll */}
+            <div className="p-6 flex-1 overflow-auto">
             <div className="flex flex-col space-y-4">
               <p className="text-sm text-gray-500">
                 Invite your friends to join our platform and earn rewards for
@@ -681,7 +677,7 @@ const Dashboard: React.FC = () => {
                 </button>
               </div>
 
-              <div className="bg-gray-50 rounded-lg p-4 mt-4">
+              {/* <div className="bg-gray-50 rounded-lg p-4 mt-4">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <div className="text-2xl font-bold text-blue-600">12</div>
@@ -694,9 +690,10 @@ const Dashboard: React.FC = () => {
                     <div className="text-xs text-gray-600">Earned</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
-          </Card>
+            </div>
+          </div>
         </div>
       </div>
     </div>
