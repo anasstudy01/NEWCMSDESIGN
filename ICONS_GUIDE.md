@@ -100,8 +100,35 @@ This project uses a combination of icon libraries for better consistency and rea
 1. **Use Lucide React for UI elements** - Most consistent with the design system
 2. **Use React Icons for branded icons** - Social media, specific brands
 3. **Consistent sizing** - Use Tailwind classes: `h-4 w-4`, `h-5 w-5`, `h-6 w-6`
-4. **Proper imports** - Import only the icons you need for better tree-shaking
-5. **Semantic naming** - Choose icons that clearly represent their function
+4. **Use Barrel File** - Import all icons from the main `./index` barrel file
+5. **Proper imports** - Import only the icons you need for better tree-shaking
+6. **Semantic naming** - Choose icons that clearly represent their function
+
+## Barrel File Integration
+
+### ✅ **New Centralized Import System**
+All icons (and components) are now exported from a single barrel file in the root directory:
+
+```tsx
+// ❌ OLD WAY: Multiple imports
+import { Plus, Eye, Settings } from 'lucide-react';
+import { FaTwitter, FaFacebook } from 'react-icons/fa';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+
+// ✅ NEW WAY: Single barrel import
+import {
+  Plus, Eye, Settings,
+  FaTwitter, FaFacebook,
+  Card, Button
+} from './index';
+```
+
+### **Benefits:**
+- **Reduced Lines**: 10+ import lines → 1 comprehensive import
+- **Better Organization**: All imports grouped logically
+- **Easier Maintenance**: Single source of truth
+- **Faster Development**: Less repetitive import statements
 
 ## Future Considerations
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { FaTwitter, FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaTwitter, FaFacebook, FaInstagram, FaWhatsapp } from '../../../index';
 
 const ReferEarn: React.FC = () => {
   return (

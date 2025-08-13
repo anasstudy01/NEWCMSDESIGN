@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { dashboardAPI } from "../services/api";
-import type { DashboardStats, Transaction, Position } from "../types";
 import {
+  useState, useEffect,
+  dashboardAPI,
+  DashboardStats, Transaction, Position,
   StatsGrid,
   TradingPerformanceChart,
   RecentTransactions,
   MarketTicker,
   TradingPositions,
   ReferEarn,
-} from "../components/dashboard";
+} from "../../index";
 
 /**
  * Main Dashboard component displaying key metrics and recent activities
