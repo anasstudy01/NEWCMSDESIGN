@@ -122,6 +122,62 @@
     "activeAccounts": 2,
     "monthlyGrowth": 12.5
   },
+  "accountTypes": [
+    {
+      "id": "1",
+      "name": "Kantara 1.0",
+      "markUp": "25+",
+      "commission": "$0",
+      "swap": "Charge",
+      "ib": "$13",
+      "minDeposit": "$50"
+    },
+    {
+      "id": "2",
+      "name": "Kantara 2.0",
+      "markUp": "20+",
+      "commission": "$0",
+      "swap": "Charge",
+      "ib": "$11",
+      "minDeposit": "$50"
+    },
+    {
+      "id": "3",
+      "name": "Kantara 3.0",
+      "markUp": "15+",
+      "commission": "$0",
+      "swap": "Charge",
+      "ib": "$10",
+      "minDeposit": "$100"
+    },
+    {
+      "id": "4",
+      "name": "Kantara 4.0",
+      "markUp": "7+",
+      "commission": "$8",
+      "swap": "Free",
+      "ib": "$8",
+      "minDeposit": "$500"
+    },
+    {
+      "id": "5",
+      "name": "Kantara 5.0",
+      "markUp": "RAW",
+      "commission": "$5",
+      "swap": "Free",
+      "ib": "$0",
+      "minDeposit": "$1000"
+    },
+    {
+      "id": "6",
+      "name": "Kantara 6.0",
+      "markUp": "Zero Spread Account",
+      "commission": "$0",
+      "swap": "Free",
+      "ib": "$0",
+      "minDeposit": "$1000"
+    }
+  ],
   "positions": [
     {
       "srNo": 1,

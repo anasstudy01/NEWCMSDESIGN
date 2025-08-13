@@ -28,7 +28,7 @@ This project uses a combination of icon libraries for better consistency and rea
    - `DollarSign` - Total Balance
    - `TrendingUp` - Total Profit
    - `Activity` - Total Trades
-   - `Users` - Active Accounts
+   - `Users` - Active s
 
 2. **RecentTransactions Component** (`src/components/dashboard/RecentTransactions.tsx`)
    - `ArrowUpRight` - Deposit icon
@@ -43,7 +43,7 @@ This project uses a combination of icon libraries for better consistency and rea
 
 5. **Page Components**
    - All form pages (Login, Signup, Deposits, etc.) use Lucide React icons
-   - TradingAccountCreation: `CheckCircle` for success state
+   - TradingCreation: `CheckCircle` for success state
    - Deposits: `CheckCircle` for success state
 
 ## Replaced SVG Elements
@@ -81,7 +81,7 @@ This project uses a combination of icon libraries for better consistency and rea
 - `Menu`, `X` - Mobile menu toggles
 - `Eye`, `EyeOff` - Password visibility
 - `Plus`, `Edit`, `Trash2` - Action buttons
-- `Settings`, `LogOut` - Account actions
+- `Settings`, `LogOut` -  actions
 
 ### Financial Icons (Lucide React)
 - `DollarSign` - Currency/money

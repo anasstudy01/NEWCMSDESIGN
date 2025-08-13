@@ -6,7 +6,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { accountsAPI } from '../services/api';
-import type { AccountCreationFormData } from '../types';
+import type { AccountCreationFormData } from '../types/index';
 
 /**
  * Trading Account Creation page component

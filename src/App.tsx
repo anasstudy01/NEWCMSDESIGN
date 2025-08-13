@@ -15,6 +15,7 @@ import TwoFactorAuth from "./pages/TwoFactorAuth";
 import MyAccounts from "./pages/MyAccount";
 import ManageAccounts from "./pages/ManageAccounts";
 
+
 /**
  * Main App component that handles routing and authentication state
  * Implements protected routes for authenticated users
@@ -116,6 +117,7 @@ function App() {
                   <Route path="/live-accounts" element={<LiveAccounts />} />
                   <Route path="/my-accounts" element={<MyAccounts />} />
                   <Route path="/manage-accounts" element={<ManageAccounts />} />
+                
 
                   <Route
                     path="/trading-account"

@@ -6,7 +6,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { ibAPI } from '../services/api';
-import type { IBRequest, IBFormData } from '../types';
+import type { IBRequest, IBFormData } from '../types/index';
 
 /**
  * IB Request page component

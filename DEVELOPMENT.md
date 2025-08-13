@@ -14,7 +14,7 @@ Your Ambitious Capital Admin Dashboard is now fully set up and running.
 
 ### 📊 Available API Endpoints
 - `/users` - User management
-- `/accounts` - Trading accounts
+- `/s` - Trading s
 - `/transactions` - Financial transactions
 - `/kycDocuments` - KYC verification documents
 - `/ibRequests` - Introducing Broker requests
@@ -36,8 +36,8 @@ npm run build
 ### 📱 Features Implemented
 ✅ Login/Authentication System
 ✅ Responsive Dashboard with Statistics
-✅ Live Trading Accounts Management
-✅ Trading Account Creation
+✅ Live Trading s Management
+✅ Trading  Creation
 ✅ KYC Verification Process
 ✅ Multi-Method Deposits (Bank, USDT, Crypto)
 ✅ Internal Fund Transfers

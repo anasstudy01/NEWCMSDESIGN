@@ -13,10 +13,10 @@ import { FaTwitter, FaFacebook } from 'react-icons/fa';
 import Card from '../../../components/ui/Card';
 import Button from '../../../components/ui/Button';
 import Input from '../../../components/ui/Input';
-import { accountsAPI } from '../../../services/api';
+import { sAPI } from '../../../services/api';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import type { Account } from '../../../types';
+import type {  } from '../../../types';
 */
 
 // AFTER: Single barrel import (Clean - 1 statement)
@@ -33,45 +33,45 @@ import {
   Card, Button, Input,
   
   // API Services
-  accountsAPI,
+  sAPI,
   
   // Form handling
   useFormik, Yup,
   
   // Types
-  Account
+  
 } from './index';
 
 /**
  * Example component demonstrating barrel file usage
  */
 const BarrelExampleComponent: React.FC = () => {
-  const [accounts, setAccounts] = useState<Account[]>([]);
+  const [s, sets] = useState<[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Fetch data using imported API
   useEffect(() => {
-    const fetchAccounts = async () => {
+    const fetchs = async () => {
       try {
-        const data = await accountsAPI.getAccounts();
-        setAccounts(data);
+        const data = await sAPI.gets();
+        sets(data);
       } catch (error) {
-        console.error('Error fetching accounts:', error);
+        console.error('Error fetching s:', error);
       } finally {
         setLoading(false);
       }
     };
-    fetchAccounts();
+    fetchs();
   }, []);
 
   // Form handling with imported Formik
   const formik = useFormik({
     initialValues: {
-      accountName: '',
+      Name: '',
       initialDeposit: 0,
     },
     validationSchema: Yup.object({
-      accountName: Yup.string().required('Account name is required'),
+      Name: Yup.string().required(' name is required'),
       initialDeposit: Yup.number().min(100, 'Minimum deposit is $100'),
     }),
     onSubmit: (values) => {
@@ -101,19 +101,19 @@ const BarrelExampleComponent: React.FC = () => {
         </div>
         
         <h2 className="text-xl font-bold">
-          Total Accounts: {accounts.length}
+          Total s: {s.length}
         </h2>
       </Card>
 
       {/* Form example */}
-      <Card title="Create New Account">
+      <Card title="Create New ">
         <form onSubmit={formik.handleSubmit} className="space-y-4">
           <Input
-            label="Account Name"
-            name="accountName"
-            value={formik.values.accountName}
+            label=" Name"
+            name="Name"
+            value={formik.values.Name}
             onChange={formik.handleChange}
-            error={formik.errors.accountName}
+            error={formik.errors.Name}
           />
           
           <Input
@@ -127,7 +127,7 @@ const BarrelExampleComponent: React.FC = () => {
           
           <Button type="submit">
             <Plus className="h-4 w-4 mr-2" />
-            Create Account
+            Create 
           </Button>
         </form>
       </Card>
