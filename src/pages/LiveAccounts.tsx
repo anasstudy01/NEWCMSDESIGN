@@ -4,6 +4,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import { accountsAPI } from '../services/api';
 import type { Account } from '../types';
+import { Link } from 'react-router-dom';
 
 /**
  * Live Accounts page component
@@ -45,10 +46,12 @@ const LiveAccounts: React.FC = () => {
           <h1 className="text-2xl font-bold text-gray-900">Live Accounts</h1>
           <p className="text-gray-600">Manage your trading accounts</p>
         </div>
-        <Button>
-          <Plus className="h-4 w-4 mr-2" />
-          Create Account
-        </Button>
+        <Link to="/trading-account">
+          <Button>
+            <Plus className="h-4 w-4 mr-2" />
+            Create Account
+          </Button>
+        </Link>
       </div>
 
       {/* Accounts List */}
