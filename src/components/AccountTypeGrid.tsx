@@ -25,12 +25,14 @@ const AccountTypeGrid: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-6 mt-6">
         {accountTypes.map((type) => (
           <div key={type.id} className="bg-white rounded-lg  p-6 flex flex-col items-center hover:transform hover:scale-105 transition-transform shadow-lg ">
-            <div className="mb-4">
-              <img src="/src/assets/react.svg" alt="Kantara" className="w-12 h-12 mx-auto" />
-              <h3 className="text-lg font-semibold mt-2">{type.name}</h3>
-              {type.markUp === 'Zero Spread Account' && (
-                <span className="text-green-600 text-xs font-bold">Zero Spread Account</span>
-              )}
+            <div className="flex items-center w-full mb-4">
+              <img src="/src/assets/mt5logo.png" alt="Kantara" className="w-12 h-12 mr-4" />
+              <div className="flex flex-col flex-1">
+                <h2 className="text-lg font-semibold mb-0">{type.name}</h2>
+                {type.markUp === 'Zero Spread Account' && (
+                  <span className="text-green-600 text-xs font-bold leading-tight">Zero Spread Account</span>
+                )}
+              </div>
             </div>
             <div className="w-full mb-4">
               <div className="flex justify-between text-sm mb-1"><span>Mark up:</span><span>{type.markUp}</span></div>
