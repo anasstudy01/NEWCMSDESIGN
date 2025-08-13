@@ -146,7 +146,7 @@ export { default as LoginPage } from './src/pages/LoginPage';
 export { default as SignupPage } from './src/pages/SignupPage';
 export { default as LiveAccounts } from './src/pages/LiveAccounts';
 export { default as TradingAccountCreation } from './src/pages/TradingAccountCreation';
-export { default as ManageAccount } from './src/pages/ManageAccount';
+export { default as ManageAccount } from './src/pages/MyAccount';
 export { default as KYCVerification } from './src/pages/KYCVerification';
 export { default as Deposits } from './src/pages/Deposits';
 export { default as InternalTransfer } from './src/pages/InternalTransfer';

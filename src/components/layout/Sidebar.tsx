@@ -49,7 +49,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onLogout }) => {
       icon: TrendingUp,
       submenu: [
         // { name: 'Create Account', href: '/trading-account', icon: Plus },
-        { name: 'Manage Account', href: '/manage-account', icon: ManageIcon },
+        { name: 'My Accounts', href: '/my-accounts', icon: ManageIcon },
+        { name: 'Manage Accounts', href: '/manage-accounts', icon: ManageIcon },
         { name: 'Live Accounts', href: '/live-accounts', icon: TrendingUp },
       ]
     },

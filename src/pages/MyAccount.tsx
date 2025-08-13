@@ -9,7 +9,7 @@ import type { Account } from '../types';
  * Manage Account page component
  * Allows users to view, edit, and manage their trading accounts
  */
-const ManageAccount: React.FC = () => {
+const MyAccounts: React.FC = () => {
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedAccount, setSelectedAccount] = useState<Account | null>(null);
@@ -63,7 +63,7 @@ const ManageAccount: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="border-b border-gray-200 pb-5">
-        <h1 className="text-3xl font-bold leading-6 text-gray-900">Manage Accounts</h1>
+        <h1 className="text-3xl font-bold leading-6 text-gray-900">My Accounts</h1>
         <p className="mt-2 max-w-4xl text-sm text-gray-500">
           View and manage your trading accounts, modify settings, and monitor account performance.
         </p>
@@ -237,4 +237,4 @@ const ManageAccount: React.FC = () => {
   );
 };
 
-export default ManageAccount;
+export default MyAccounts;
