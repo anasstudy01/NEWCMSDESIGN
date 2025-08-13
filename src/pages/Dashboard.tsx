@@ -65,15 +65,19 @@ const Dashboard: React.FC = () => {
       {/* Market Ticker */}
       <MarketTicker />
 
-      {/* Trading Positions and Refer & Earn Cards Side by Side */}
-      <div className="flex justify-between gap-5 h-96">
-        <TradingPositions
-          positions={positions}
-          closedPositions={closedPositions}
-          showOpenPositions={showOpenPositions}
-          setShowOpenPositions={setShowOpenPositions}
-        />
-        <ReferEarn />
+      {/* Trading Positions and Refer & Earn Cards */}
+      <div className="flex flex-col lg:flex-row gap-5 min-h-96">
+        <div className="w-full lg:w-1/2">
+          <TradingPositions
+            positions={positions}
+            closedPositions={closedPositions}
+            showOpenPositions={showOpenPositions}
+            setShowOpenPositions={setShowOpenPositions}
+          />
+        </div>
+        <div className="w-full lg:w-1/2">
+          <ReferEarn />
+        </div>
       </div>
     </div>
   );

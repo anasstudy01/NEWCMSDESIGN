@@ -8,6 +8,15 @@
       "balance": 50000,
       "verified": true,
       "twoFactorEnabled": false
+    },
+    {
+      "id": "1755064394166",
+      "email": "demo@gmail.com",
+      "password": "Anas1234",
+      "name": "mohd anas",
+      "balance": 0,
+      "verified": false,
+      "twoFactorEnabled": false
     }
   ],
   "accounts": [
@@ -112,35 +121,37 @@
     "totalTrades": 150,
     "activeAccounts": 2,
     "monthlyGrowth": 12.5
-  }
-    ,
-    "positions": [
-      {
-        "srNo": 1,
-        "orderId": "ORD001",
-        "account": "ACC123456",
-        "type": "Buy",
-        "openPrice": 1.0892,
-        "symbol": "EUR/USD",
-        "volume": 0.1
-      },
-      {
-        "srNo": 2,
-        "orderId": "ORD002",
-        "account": "ACC123456",
-        "type": "Sell",
-        "openPrice": 1.2734,
-        "symbol": "GBP/USD",
-        "volume": 0.2
-      },
-      {
-        "srNo": 3,
-        "orderId": "ORD003",
-        "account": "ACC123457",
-        "type": "Buy",
-        "openPrice": 149.82,
-        "symbol": "USD/JPY",
-        "volume": 0.15
-      }
-    ]
+  },
+  "positions": [
+    {
+      "srNo": 1,
+      "orderId": "ORD001",
+      "account": "ACC123456",
+      "type": "Buy",
+      "openPrice": 1.0892,
+      "symbol": "EUR/USD",
+      "volume": 0.1,
+      "id": "63db"
+    },
+    {
+      "srNo": 2,
+      "orderId": "ORD002",
+      "account": "ACC123456",
+      "type": "Sell",
+      "openPrice": 1.2734,
+      "symbol": "GBP/USD",
+      "volume": 0.2,
+      "id": "9870"
+    },
+    {
+      "srNo": 3,
+      "orderId": "ORD003",
+      "account": "ACC123457",
+      "type": "Buy",
+      "openPrice": 149.82,
+      "symbol": "USD/JPY",
+      "volume": 0.15,
+      "id": "c90d"
+    }
+  ]
 }
