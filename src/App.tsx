@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
 import DashboardLayout from "./layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 import LiveAccounts from "./pages/LiveAccounts";
@@ -18,6 +19,7 @@ import TwoFactorAuth from "./pages/TwoFactorAuth";
  */
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [showSignup, setShowSignup] = useState<boolean>(false);
 
   // Check authentication status on component mount
   useEffect(() => {
@@ -35,11 +37,34 @@ function App() {
   };
 
   /**
+   * Handle user signup
+   * @param token - Authentication token
+   */
+  const handleSignup = (token: string) => {
+    localStorage.setItem("authToken", token);
+    setIsAuthenticated(true);
+  };
+
+  /**
    * Handle user logout
    */
   const handleLogout = () => {
     localStorage.removeItem("authToken");
     setIsAuthenticated(false);
+  };
+
+  /**
+   * Switch to signup page
+   */
+  const switchToSignup = () => {
+    setShowSignup(true);
+  };
+
+  /**
+   * Switch to login page
+   */
+  const switchToLogin = () => {
+    setShowSignup(false);
   };
 
   return (
@@ -50,7 +75,31 @@ function App() {
           path="/login"
           element={
             !isAuthenticated ? (
-              <LoginPage onLogin={handleLogin} />
+              showSignup ? (
+                <SignupPage 
+                  onSignup={handleSignup} 
+                  onSwitchToLogin={switchToLogin}
+                />
+              ) : (
+                <LoginPage 
+                  onLogin={handleLogin} 
+                  onSwitchToSignup={switchToSignup}
+                />
+              )
+            ) : (
+              <Navigate to="/dashboard" replace />
+            )
+          }
+        />
+        
+        <Route
+          path="/signup"
+          element={
+            !isAuthenticated ? (
+              <SignupPage 
+                onSignup={handleSignup} 
+                onSwitchToLogin={switchToLogin}
+              />
             ) : (
               <Navigate to="/dashboard" replace />
             )

@@ -60,6 +60,33 @@ export const authAPI = {
   },
 
   /**
+   * Register new user
+   */
+  signup: async (userData: { name: string; email: string; password: string }) => {
+    // Check if user already exists
+    const existingUsers = await api.get('/users');
+    const userExists = existingUsers.data.find((u: User) => u.email === userData.email);
+    
+    if (userExists) {
+      throw new Error('User with this email already exists');
+    }
+
+    // Create new user
+    const newUser = {
+      id: Date.now().toString(),
+      email: userData.email,
+      password: userData.password,
+      name: userData.name,
+      balance: 0,
+      verified: false,
+      twoFactorEnabled: false
+    };
+
+    const response = await api.post('/users', newUser);
+    return { token: 'demo-token-' + newUser.id, user: response.data };
+  },
+
+  /**
    * Get current user profile
    */
   getProfile: async () => {

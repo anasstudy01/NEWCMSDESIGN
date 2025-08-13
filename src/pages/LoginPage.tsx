@@ -10,13 +10,14 @@ import type { LoginFormData } from '../types';
 
 interface LoginPageProps {
   onLogin: (token: string) => void;
+  onSwitchToSignup?: () => void;
 }
 
 /**
  * Login page component based on the Ambitious Capital design
  * Handles user authentication with email and password
  */
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
+const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSwitchToSignup }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -121,9 +122,19 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
             <div className="text-center">
               <p className="text-sm text-gray-600">
                 Don't have an account?{' '}
-                <a href="#" className="font-medium text-green-600 hover:text-green-500">
-                  Sign up now
-                </a>
+                {onSwitchToSignup ? (
+                  <button
+                    type="button"
+                    onClick={onSwitchToSignup}
+                    className="font-medium text-green-600 hover:text-green-500 underline"
+                  >
+                    Sign up now
+                  </button>
+                ) : (
+                  <a href="/signup" className="font-medium text-green-600 hover:text-green-500">
+                    Sign up now
+                  </a>
+                )}
               </p>
             </div>
           </form>

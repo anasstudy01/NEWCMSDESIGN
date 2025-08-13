@@ -79,6 +79,14 @@ export interface LoginFormData {
   password: string;
 }
 
+export interface SignupFormData {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  agreeToTerms: boolean;
+}
+
 export interface DepositFormData {
   amount: number;
   method: 'bank' | 'usdt' | 'crypto';
