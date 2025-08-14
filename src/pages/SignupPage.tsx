@@ -5,7 +5,7 @@ import { Eye, EyeOff, Mail, Lock, User, CheckSquare, Square } from 'lucide-react
 import Input from '../components/ui/Input';
 import Button from '../components/ui/Button';
 import { authAPI } from '../services/api';
-import image from '../assets/admin.png';
+import laptop from '../assets/lapi.png';
 import type { SignupFormData } from '../types';
 
 interface SignupPageProps {
@@ -81,9 +81,10 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSignup, onSwitchToLogin }) =>
   return (
     <div className="min-h-screen flex">
       {/* Left side - Branding */}
-      <div className="max-w-[30%] hidden md:block items-center justify-center">
-        <div>
-          <img src={image} alt="Billion Infotech" className="h-screen w-full object-cover" />
+      <div className="max-w-[35%] hidden md:block items-center justify-center">
+        <div className='bg-green-400 w-full h-screen flex justify-center items-center p-10'>
+          
+          <img src={laptop} alt="Billion Infotech" className="" />
         </div>
       </div>
 
