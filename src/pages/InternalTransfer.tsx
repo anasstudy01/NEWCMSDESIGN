@@ -6,7 +6,7 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Input from '../components/ui/Input';
 import { accountsAPI, transactionsAPI } from '../services/api';
-import type { Account, TransferFormData } from '../types';
+import type { Account, FundTransferFormData } from '../types';
 
 /**
  * Internal Transfer page component
@@ -49,12 +49,13 @@ const InternalTransfer: React.FC = () => {
   });
 
   // Form handling with Formik
-  const formik = useFormik<TransferFormData>({
+  const formik = useFormik<FundTransferFormData>({
     initialValues: {
       fromAccount: '',
       toAccount: '',
       amount: 0,
       currency: 'USD',
+      transferDate: new Date().toISOString().split('T')[0],
     },
     validationSchema,
     onSubmit: async (values) => {

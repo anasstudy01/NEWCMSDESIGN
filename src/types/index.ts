@@ -102,8 +102,39 @@ export interface IBFormData {
 }
 
 export interface AccountCreationFormData {
+  platformType: string;
+  accountVariant: string;
   accountType: string;
   currency: string;
   leverage: string;
+  investorPassword: string;
+  masterPassword: string;
   initialDeposit?: number;
+}
+
+export interface FundTransferFormData {
+  fromAccount: string;
+  toAccount: string;
+  amount: number;
+  currency: string;
+  transferDate: string;
+}
+
+
+export interface KYCFormData {
+  file: File | null;
+  documentType: string;
+  documentNumber: string;
+  expiryDate: string;
+  uploadDate: string;
+}
+
+export interface KYCDocument{
+  id: string;
+  userId: string | number;
+  documentType: string;
+  documentNumber: string;
+  expiryDate: string;
+  uploadDate: string;
+  status: string;
 }

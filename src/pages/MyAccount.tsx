@@ -12,7 +12,7 @@ import type { Account } from '../types';
 const MyAccounts: React.FC = () => {
   const [accounts, setAccounts] = useState<Account[]>([]);
   const [loading, setLoading] = useState(true);
-  const [selectedAccount, setSelectedAccount] = useState<Account | null>(null);
+
 
   useEffect(() => {
     loadAccounts();
@@ -120,7 +120,7 @@ const MyAccounts: React.FC = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => setSelectedAccount(account)}
+                  
                   className="flex-1"
                 >
                   <Eye className="h-4 w-4 mr-2" />
@@ -149,76 +149,7 @@ const MyAccounts: React.FC = () => {
         ))}
       </div>
 
-      {/* Account Details Modal */}
-      {selectedAccount && (
-        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
-          <div className="relative top-20 mx-auto p-5 border w-11/12 md:w-3/4 lg:w-1/2 shadow-lg rounded-md bg-white">
-            <div className="mt-3">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-900">
-                  Account Details - {selectedAccount.accountNumber}
-                </h3>
-                <button
-                  onClick={() => setSelectedAccount(null)}
-                  className="text-gray-400 hover:text-gray-600"
-                >
-                  <span className="sr-only">Close</span>
-                  ✕
-                </button>
-              </div>
-
-              <div className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Account Number</label>
-                    <p className="mt-1 text-sm text-gray-900">{selectedAccount.accountNumber}</p>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Account Type</label>
-                    <p className="mt-1 text-sm text-gray-900">{selectedAccount.accountType}</p>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Balance</label>
-                    <p className="mt-1 text-sm text-gray-900">
-                      ${selectedAccount.balance.toLocaleString()} {selectedAccount.currency}
-                    </p>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Leverage</label>
-                    <p className="mt-1 text-sm text-gray-900">{selectedAccount.leverage}</p>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Currency</label>
-                    <p className="mt-1 text-sm text-gray-900">{selectedAccount.currency}</p>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Status</label>
-                    <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(
-                        selectedAccount.status
-                      )}`}
-                    >
-                      {selectedAccount.status}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-6 flex justify-end space-x-3">
-                <Button
-                  variant="outline"
-                  onClick={() => setSelectedAccount(null)}
-                >
-                  Close
-                </Button>
-                <Button disabled={selectedAccount.status !== 'Active'}>
-                  Edit Account
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+   
 
       {/* Empty State */}
       {accounts.length === 0 && !loading && (

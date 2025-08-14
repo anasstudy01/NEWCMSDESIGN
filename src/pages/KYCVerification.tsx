@@ -55,6 +55,7 @@ const KYCVerification: React.FC = () => {
       documentNumber: '',
       expiryDate: '',
       file: null,
+      uploadDate: new Date().toISOString(),
     },
     validationSchema,
     onSubmit: async (values) => {
