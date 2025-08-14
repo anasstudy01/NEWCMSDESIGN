@@ -138,3 +138,18 @@ export interface KYCDocument{
   uploadDate: string;
   status: string;
 }
+
+
+export interface SignupFormData {
+  email: string;
+  password: string;
+  confirmPassword: string;
+  name: string;
+  twoFactorEnabled ?: boolean;
+  agreeToTerms: boolean;
+}
+
+export interface LoginFormData {
+  email: string;
+  password: string;
+}

@@ -39,6 +39,49 @@
       "currency": "USD",
       "leverage": "1:200",
       "status": "Active"
+    },
+    {
+      "id": "f5de",
+      "platformType": "MT5",
+      "accountVariant": "Demo",
+      "accountType": "Kantara 2.0",
+      "currency": "EUR",
+      "leverage": "1:200",
+      "investorPassword": "asdfasdfsdf",
+      "masterPassword": "asdfsadf",
+      "userId": 1,
+      "accountNumber": "AMB1755162363449",
+      "balance": 10000,
+      "status": "Active"
+    },
+    {
+      "id": "8bf6",
+      "platformType": "MT5",
+      "accountVariant": "Live",
+      "accountType": "Kantara 6.0",
+      "currency": "USD",
+      "leverage": "1:500",
+      "investorPassword": "mqZguHJT",
+      "masterPassword": "el9UlysP",
+      "initialDeposit": 5000,
+      "userId": 1,
+      "accountNumber": "AMB1755162402673",
+      "balance": 5000,
+      "status": "Active"
+    },
+    {
+      "id": "2cd2",
+      "platformType": "MT5",
+      "accountVariant": "Demo",
+      "accountType": "Kantara 1.0",
+      "currency": "USD",
+      "leverage": "1:100",
+      "investorPassword": "ONbMdzQz",
+      "masterPassword": "txKCTYgS",
+      "userId": 1,
+      "accountNumber": "AMB1755162783978",
+      "balance": 10000,
+      "status": "Active"
     }
   ],
   "transactions": [
@@ -82,6 +125,28 @@
       "type": "Transfer",
       "status": "Completed",
       "date": "2025-08-12T01:40:43.881Z"
+    },
+    {
+      "id": "6477",
+      "fromAccount": "AMB1755162363449",
+      "toAccount": "AMB1755162402673",
+      "amount": 3000,
+      "currency": "USD",
+      "transferDate": "2025-08-14",
+      "userId": 1,
+      "type": "Transfer",
+      "status": "Completed",
+      "date": "2025-08-14T09:07:26.758Z"
+    },
+    {
+      "id": "fee5",
+      "amount": 1000,
+      "method": "crypto",
+      "currency": "USD",
+      "userId": 1,
+      "type": "Deposit",
+      "status": "Processing",
+      "date": "2025-08-14T09:11:43.964Z"
     }
   ],
   "kycDocuments": [

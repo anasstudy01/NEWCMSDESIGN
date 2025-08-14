@@ -81,7 +81,7 @@ const SignupPage: React.FC<SignupPageProps> = ({ onSignup, onSwitchToLogin }) =>
   return (
     <div className="min-h-screen flex">
       {/* Left side - Branding */}
-      <div className="flex-1 flex items-center justify-center">
+      <div className="max-w-[30%] hidden md:block items-center justify-center">
         <div>
           <img src={image} alt="Billion Infotech" className="h-screen w-full object-cover" />
         </div>

@@ -119,9 +119,7 @@ function App() {
                   <Route path="/manage-accounts" element={<ManageAccounts />} />
                 
 
-                  <Route
-                    path="/trading-account"
-                    element={<TradingAccountCreation />}
+                  <Route path="/trading-account" element={<TradingAccountCreation />}
                   />
                   <Route path="/kyc" element={<KYCVerification />} />
                   <Route path="/deposits" element={<Deposits />} />

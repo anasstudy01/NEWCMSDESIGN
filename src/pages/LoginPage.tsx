@@ -14,7 +14,7 @@ interface LoginPageProps {
 }
 
 /**
- * Login page component based on the Ambitious Capital design
+ * Login page component based on the Billion InfoTech Design
  * Handles user authentication with email and password
  */
 const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSwitchToSignup }) => {
@@ -55,7 +55,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSwitchToSignup }) => {
   return (
     <div className="min-h-screen flex">
       {/* Left side - Branding */}
-      <div className="flex-1  flex items-center justify-center ">
+      <div className=" max-w-[30%] hidden md:block items-center justify-center ">
         <div>
           <img src={image} alt="Billion Infotech" className="h-screen w-full object-cover" />
         </div>
@@ -71,6 +71,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin, onSwitchToSignup }) => {
 
           <form onSubmit={formik.handleSubmit} className="space-y-6">
             <Input
+            
               label="Email"
               type="email"
               name="email"
